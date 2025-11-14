@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+        <!-- Hero Section -->
+        <div class="card-frost" style="text-align: center; padding: 50px 20px; margin-bottom: 40px; background: linear-gradient(135deg, rgba(124,77,255,0.1), rgba(50,215,255,0.05));">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1 style="color: white; font-size: 3rem; margin-bottom: 20px; text-shadow: 0 0 30px rgba(124,77,255,0.5);">
+                    Revolutionizing Democracy
+                </h1>
+                <p style="color: var(--muted); font-size: 1.2rem; line-height: 1.6;">
+                    Our mission is to make voting accessible, secure, and transparent for everyone. 
+                    We're building the future of democratic participation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="card-frost" style="padding: 30px; margin-bottom: 40px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h2 style="color: var(--accent-2); margin-bottom: 15px;">Our Vision</h2>
+                    <p style="color: var(--muted); line-height: 1.6;">
+                        To create a world where every voice matters and every vote counts. 
+                        We envision a future where participation in democracy is as easy as 
+                        checking your email, yet as secure as your bank account.
+                    </p>
+                </div>
+                <div>
+                    <h2 style="color: var(--accent-2); margin-bottom: 15px;">Our Commitment</h2>
+                    <p style="color: var(--muted); line-height: 1.6;">
+                        We're committed to maintaining the highest standards of security, 
+                        accessibility, and transparency. Our platform is built on cutting-edge 
+                        technology and rigorous democratic principles.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 40px 0;">
+            <div class="card-frost" style="padding: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">🛡️ Security First</h3>
+                <ul style="color: var(--muted); line-height: 1.6; list-style: none;display: flex; flex-direction: column ; padding: 0;">
+                    <li >• End-to-end encryption</li>
+                    <li >• Blockchain verification</li>
+                    <li >• Multi-factor authentication</li>
+                    <li style="margin-bottom: 10px;">• Regular security audits</li>
+                </ul>
+            </div>
+
+            <div class="card-frost" style="padding: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">🌐 Accessibility</h3>
+                <ul style="color: var(--muted); line-height: 1.6; list-style: none; padding: 0; display: flex; flex-direction: column ;">
+                    <li >• Mobile-friendly design</li>
+                    <li >• Multi-language support</li>
+                    <li >• Screen reader compatible</li>
+                    <li style="margin-bottom: 10px;">• Low-bandwidth options</li>
+                </ul>
+            </div>
+
+            <div class="card-frost" style="padding: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">📊 Transparency</h3>
+                <ul style="color: var(--muted); line-height: 1.6; list-style: none; padding: 0; display: flex; flex-direction: column ;">
+                    <li >• Real-time vote tracking</li>
+                    <li >• Public audit logs</li>
+                    <li>• Result verification</li>
+                    <li style="margin-bottom: 10px;">• Open-source components</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="card-frost" style="margin-top: 40px; padding: 40px; text-align: center;">
+            <h2 style="color: white; margin-bottom: 30px;">Our Impact</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+                <div>
+                    <h3 style="color: var(--accent-2); font-size: 2.5rem; margin-bottom: 10px;">100%</h3>
+                    <p style="color: var(--muted);">Vote Accuracy</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-2); font-size: 2.5rem; margin-bottom: 10px;">24/7</h3>
+                    <p style="color: var(--muted);">Platform Availability</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-2); font-size: 2.5rem; margin-bottom: 10px;">0</h3>
+                    <p style="color: var(--muted);">Security Breaches</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card-frost" style="margin-top: 40px; padding: 30px; text-align: center;">
+            <h2 style="color: white; margin-bottom: 20px;">Get in Touch</h2>
+            <p style="color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                Have questions about our platform? Want to learn more about how we're 
+                transforming digital democracy? We'd love to hear from you.
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn-primary-custom" style="text-decoration: none; display: inline-block;">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Message display for session messages -->
+        <div th:if=${session.msg} style="margin-top: 20px; text-align: center;">
+            <div class="card-frost" style="display: inline-block; padding: 15px 30px;">
+                <h3 th:text="${session.msg}" style="color: var(--accent-2); margin: 0;"></h3>
+                <div th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}" style="display: none;"></div>
+            </div>
+        </div>
+	</section>
+</body>
+</html>

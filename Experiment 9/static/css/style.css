@@ -1,0 +1,133 @@
+
+:root{
+    --bg-1: #071029; /* deep navy */
+    --bg-2: #2b0b5a; /* deep purple */
+    --panel: rgba(255,255,255,0.04);
+    --accent: #7c4dff; /* blue-purple */
+    --accent-2: #32d7ff; /* cyan highlight */
+    --muted: #98a4bf;
+    --glass: rgba(255,255,255,0.06);
+}
+
+/* Global */
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #e6eef8;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(124,77,255,0.12), transparent 10%),
+                linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 60%);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* App shell */
+.app-shell{
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 20px;
+}
+
+/* Navbar */
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #571faa7a, rgba(255, 255, 255, 0.01));  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,14,28,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+ul li{ list-style:none; }
+
+ul li a{
+  color: var(--muted);
+  padding: 10px 14px;
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 160ms ease;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+ul li a:hover{
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(124,77,255,0.14), rgba(50,215,255,0.06));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(44,22,88,0.35);
+}
+
+ul li a.active{
+  color: white;
+  background: linear-gradient(90deg, #1e113b, #4d12a3);
+  box-shadow: 0 8px 28px rgba(124,77,255,0.22);
+}
+
+.app-brand{
+  font-weight:700;
+  color: white;
+  font-size: 1.05rem;
+  padding: 6px 10px;
+  margin-right: 6px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.app-brand .logo-dot{
+  width:14px;height:14px;border-radius:50%;
+  background: conic-gradient(from 200deg at 50% 50%, var(--accent), var(--accent-2));
+  box-shadow: 0 4px 12px rgba(124,77,255,0.28), 0 0 24px rgba(50,215,255,0.06) inset;
+}
+
+/* Panels and cards */
+.card-frost{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 18px;
+  color: #dbe9ff;
+  box-shadow: 0 6px 30px rgba(6,8,20,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Forms & buttons */
+.btn-primary-custom{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: #041126;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight:700;
+  box-shadow: 0 8px 26px rgba(124,77,255,0.18);
+}
+
+.center{
+    margin-top: 10mm;
+    text-align: center;
+}
+
+/* Tables */
+table{ border-collapse: collapse; width:100%; }
+table thead th{ background: rgba(255,255,255,0.03); color: var(--muted); padding:10px; text-align:left; }
+table tbody tr td{ padding:10px; border-bottom: 1px solid rgba(255,255,255,0.02); color:#dfe9ff }
+
+/* Small responsive tweaks */
+@media (max-width:640px){
+  ul.app-nav{ flex-wrap:wrap; gap:6px }
+  .app-shell{ padding: 12px }
+}
+.box1{
+ background: linear-gradient(135deg, rgb(18 11 55), rgba(50, 215, 255, 0.05)); 
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: #0000006c -5px 5px 8px;
+}
+
+.usection{
+ background: linear-gradient(135deg, rgb(18 11 55), rgba(50, 215, 255, 0.05)); 
+  border-radius: 10px;
+  padding: 20px;
+}
+

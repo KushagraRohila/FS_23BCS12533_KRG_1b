@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+        <!-- Hero Section -->
+        <div class="card-frost" style="text-align: center; padding: 60px 20px; margin-bottom: 40px; background: linear-gradient(135deg, rgb(18 11 55), rgba(50, 215, 255, 0.05));">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1 style="color: white; font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 0 30px rgba(124,77,255,0.5);">
+                    Democracy Goes Digital
+                </h1>
+                <p style="color: var(--muted); font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">
+                    Experience the future of voting with our secure, transparent, and easy-to-use platform.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a th:href="@{/register}" class="btn-primary-custom" style="text-decoration: none; padding: 15px 30px;">
+                        Get Started
+                    </a>
+                    <a th:href="@{/about}" style="text-decoration: none; padding: 15px 30px; color: var(--muted); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; transition: all 0.3s ease;">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin: 40px 0;">
+            <!-- Feature 1 -->
+            <div class="card-frost" style="padding: 30px; text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🗳️</div>
+                <h3 style="color: var(--accent-2); margin-bottom: 10px;">Cast Your Vote</h3>
+                <p style="color: var(--muted); line-height: 1.5;">
+                    Simple and secure voting process from any device, anywhere.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="card-frost" style="padding: 30px; text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 15px;">📊</div>
+                <h3 style="color: var(--accent-2); margin-bottom: 10px;">Live Results</h3>
+                <p style="color: var(--muted); line-height: 1.5;">
+                    Watch real-time voting statistics and results as they happen.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="card-frost" style="padding: 30px; text-align: center;">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🔒</div>
+                <h3 style="color: var(--accent-2); margin-bottom: 10px;">Bank-Grade Security</h3>
+                <p style="color: var(--muted); line-height: 1.5;">
+                    Advanced encryption and blockchain technology protect your vote.
+                </p>
+            </div>
+        </div>
+
+        <!-- Session Messages -->
+        <div th:if=${session.msg} style="margin-top: 20px; text-align: center;">
+            <div class="card-frost" style="display: inline-block; padding: 15px 30px;">
+                <h3 th:text="${session.msg}" style="color: var(--accent-2); margin: 0;"></h3>
+                <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
